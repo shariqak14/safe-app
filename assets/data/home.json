@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "data": {
+    "banner": [
+      {
+        "id": 1,
+        "image": "assets/images/hurricane-banner.jpg"
+      },
+      {
+        "id": 2,
+        "image": "assets/images/storm-banner.jpg"
+      },
+      {
+        "id": 3,
+        "image": "assets/images/tornado-banner.jpg"
+      }
+    ],
+    "category": [
+      {
+        "id": 1,
+        "title": "Storm Tracking",
+        "icon": "shopping_basket",
+        "color": "#ff8a65",
+        "type": "shop"
+      },
+      {
+        "id": 2,
+        "title": "My Safety",
+        "icon": "local_drink",
+        "color": "#5d6d7e",
+        "type": "drink"
+      },
+      {
+        "id": 3,
+        "title": "My Risk",
+        "icon": "event_available",
+        "color": "#a569bd",
+        "type": "event"
+      },
+      {
+        "id": 4,
+        "title": "Prop. Safety",
+        "icon": "all_inclusive",
+        "color": "#5dade2",
+        "type": "estate"
+      },
+      {
+        "id": 5,
+        "title": "Property Risk",
+        "icon": "card_travel",
+        "color": "#4a90a4",
+        "type": "job"
+      },
+      {
+        "id": 6,
+        "title": "Supplies",
+        "icon": "restaurant",
+        "color": "#58d68d",
+        "type": "restaurant"
+      },
+      {
+        "id": 7,
+        "title": "Evacuation",
+        "icon": "directions_car",
+        "color": "#fdc60a",
+        "type": "automotive"
+      },
+      {
+        "id": 8,
+        "title": "Stay in Touch",
+        "icon": "hotel",
+        "color": "#ff8a65",
+        "type": "hotel"
+      }
+    ]
+  },
+  "message": "get data success"
+}

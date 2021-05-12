@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "data": {
+    "location": [
+      {
+        "id": 1,
+        "name": "Bridgeport",
+        "lat": 37.774929,
+        "long": -122.419418
+      },
+      {
+        "id": 2,
+        "name": "Milford",
+        "lat": 37.774929,
+        "long": -122.419418
+      },
+      {
+        "id": 3,
+        "name": "New Haven",
+        "lat": 37.774929,
+        "long": -122.419418
+      },
+      {
+        "id": 4,
+        "name": "New London",
+        "lat": 37.774929,
+        "long": -122.419418
+      },
+      {
+        "id": 5,
+        "name": "Norwalk",
+        "lat": 37.774929,
+        "long": -122.419418
+      }
+    ]
+  },
+  "message": "get data success"
+}

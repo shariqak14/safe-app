@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "254789615258",
+    "firebase_url": "https://listarflutter.firebaseio.com",
+    "project_id": "listarflutter",
+    "storage_bucket": "listarflutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254789615258:android:d186e35569214101f8a923",
+        "android_client_info": {
+          "package_name": "com.huynh.listar_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254789615258-p9n1rlm99m0jb4jk4pc5ftnupbcd13i2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9garNK6h2IGgZ74ocFXHVXLknC9bUCws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254789615258-p9n1rlm99m0jb4jk4pc5ftnupbcd13i2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "254789615258-qbpjmknq1u9473imrnnh2chlbcs6i2b1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.huynh.listarFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
