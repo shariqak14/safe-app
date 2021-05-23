@@ -6,7 +6,7 @@
 
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="Safer"
+        android:label="SAFER"
         android:icon="@mipmap/ic_launcher">
 
         <activity
@@ -26,7 +26,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
+        
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
         <meta-data
             android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
             android:value="true" />

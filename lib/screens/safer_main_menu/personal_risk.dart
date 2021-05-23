@@ -1,9 +1,4 @@
-import 'dart:collection';
-
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:listar_flutter/models/screen_models/filter_page_model.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_spinbox/material.dart';
 
 class PersonalRisk extends StatefulWidget {

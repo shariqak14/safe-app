@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:listar_flutter/blocs/bloc.dart';
 import 'package:listar_flutter/screens/screen.dart';
 import 'package:listar_flutter/utils/utils.dart';
 
@@ -56,7 +54,6 @@ class _MainNavigationState extends State<MainNavigation> {
         children: <Widget>[
           Home(),
           Profile(),
-          // auth is AuthenticationSuccess ? Profile() : SignIn()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
