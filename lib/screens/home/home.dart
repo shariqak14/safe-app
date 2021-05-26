@@ -48,15 +48,15 @@ class _HomeState extends State<Home> {
         Navigator.pushNamed(context, Routes.stormTracking,
             arguments: item.title);
         break;
-      case 'My Safety':
+      case 'Personal Safety':
         Navigator.pushNamed(context, Routes.personalSafety,
             arguments: item.title);
         break;
-      case 'My Risk':
+      case 'Personal Risk':
         Navigator.pushNamed(context, Routes.personalRisk,
             arguments: item.title);
         break;
-      case 'Prop. Safety':
+      case 'Property Safety':
         Navigator.pushNamed(context, Routes.propertySafety,
             arguments: item.title);
         break;
@@ -135,7 +135,7 @@ class _HomeState extends State<Home> {
         slivers: <Widget>[
           SliverPersistentHeader(
             delegate: AppBarHomeSliver(
-              expandedHeight: 300,
+              expandedHeight: MediaQuery.of(context).size.height * 0.30,
               banners: _homePage?.banner ?? [],
             ),
             pinned: true,
@@ -240,7 +240,8 @@ class _HomeState extends State<Home> {
                               ),
                               Padding(padding: EdgeInsets.only(top: 10)),
                               Container(
-                                  width: 385,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.89,
                                   child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
                                       child: GestureDetector(

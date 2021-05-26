@@ -25,21 +25,21 @@
       },
       {
         "id": 2,
-        "title": "My Safety",
+        "title": "Personal Safety",
         "icon": "local_drink",
         "color": "#5d6d7e",
         "type": "drink"
       },
       {
         "id": 3,
-        "title": "My Risk",
+        "title": "Personal Risk",
         "icon": "event_available",
         "color": "#a569bd",
         "type": "event"
       },
       {
         "id": 4,
-        "title": "Prop. Safety",
+        "title": "Property Safety",
         "icon": "all_inclusive",
         "color": "#5dade2",
         "type": "estate"

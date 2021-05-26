@@ -21,7 +21,7 @@ class HomeCategoryItem extends StatelessWidget {
         highlightColor: Theme.of(context).highlightColor,
         enabled: true,
         child: Container(
-          width: MediaQuery.of(context).size.width * 0.21,
+          width: MediaQuery.of(context).size.width * 0.26,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -52,7 +52,7 @@ class HomeCategoryItem extends StatelessWidget {
     }
 
     return Container(
-      width: MediaQuery.of(context).size.width * 0.21,
+      width: MediaQuery.of(context).size.width * 0.26,
       child: GestureDetector(
         onTap: () => onPressed(item),
         child: Column(
