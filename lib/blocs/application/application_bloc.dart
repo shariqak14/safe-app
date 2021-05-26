@@ -78,7 +78,7 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
             darkOption = DarkOption.alwaysOn;
             break;
           default:
-            darkOption = DarkOption.dynamic;
+            darkOption = DarkOption.alwaysOff;
         }
       }
 

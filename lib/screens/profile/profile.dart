@@ -166,50 +166,10 @@ class _ProfileState extends State<Profile> {
               ),
             ),
             AppListTitle(
-              title: Translate.of(context).translate('dark_mode'),
-              onPressed: _showDarkModeSetting,
-              trailing: Row(
-                children: <Widget>[
-                  Text(
-                    Translate.of(context).translate(
-                      UtilTheme.exportLangTheme(AppTheme.darkThemeOption),
-                    ),
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                  RotatedBox(
-                    quarterTurns: UtilLanguage.isRTL() ? 2 : 0,
-                    child: Icon(
-                      Icons.keyboard_arrow_right,
-                      textDirection: TextDirection.ltr,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            AppListTitle(
-              title: Translate.of(context).translate('font'),
+              title: Translate.of(context).translate('terms_of_use'),
               onPressed: () {
-                _onNavigate(Routes.fontSetting);
+                _onNavigate(Routes.changeLanguage);
               },
-              trailing: Row(
-                children: <Widget>[
-                  Text(
-                    AppTheme.currentFont,
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                  RotatedBox(
-                    quarterTurns: UtilLanguage.isRTL() ? 2 : 0,
-                    child: Icon(
-                      Icons.keyboard_arrow_right,
-                      textDirection: TextDirection.ltr,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            AppListTitle(
-              title: Translate.of(context).translate('version'),
-              onPressed: () {},
               trailing: Row(
                 children: <Widget>[
                   Text(
@@ -219,7 +179,7 @@ class _ProfileState extends State<Profile> {
                   RotatedBox(
                     quarterTurns: UtilLanguage.isRTL() ? 2 : 0,
                     child: Icon(
-                      Icons.keyboard_arrow_right,
+                      Icons.arrow_drop_up,
                       textDirection: TextDirection.ltr,
                     ),
                   ),
