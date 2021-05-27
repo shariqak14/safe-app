@@ -9,12 +9,10 @@ import 'package:listar_flutter/utils/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
-  // final AuthBloc authBloc;
   final ThemeBloc themeBloc;
   final LanguageBloc languageBloc;
 
   ApplicationBloc({
-    // @required this.authBloc,
     @required this.themeBloc,
     @required this.languageBloc,
   });
@@ -90,9 +88,6 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
           darkOption: darkOption ?? AppTheme.darkThemeOption,
         ),
       );
-
-      ///Authentication begin check
-      // authBloc.add(AuthenticationCheck());
 
       ///First or After upgrade version show intro preview app
       final hasReview = UtilPreferences.containsKey(

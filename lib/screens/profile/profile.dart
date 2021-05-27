@@ -40,29 +40,29 @@ class _ProfileState extends State<Profile> {
             top: 15,
           ),
           children: <Widget>[
-            AppListTitle(
-              title: Translate.of(context).translate('language'),
-              onPressed: () {
-                _onNavigate(Routes.changeLanguage);
-              },
-              trailing: Row(
-                children: <Widget>[
-                  Text(
-                    UtilLanguage.getGlobalLanguageName(
-                      AppLanguage.defaultLanguage.languageCode,
-                    ),
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                  RotatedBox(
-                    quarterTurns: UtilLanguage.isRTL() ? 2 : 0,
-                    child: Icon(
-                      Icons.keyboard_arrow_right,
-                      textDirection: TextDirection.ltr,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            // AppListTitle(
+            //   title: Translate.of(context).translate('language'),
+            //   onPressed: () {
+            //     _onNavigate(Routes.changeLanguage);
+            //   },
+            //   trailing: Row(
+            //     children: <Widget>[
+            //       Text(
+            //         UtilLanguage.getGlobalLanguageName(
+            //           AppLanguage.defaultLanguage.languageCode,
+            //         ),
+            //         style: Theme.of(context).textTheme.bodyText1,
+            //       ),
+            //       RotatedBox(
+            //         quarterTurns: UtilLanguage.isRTL() ? 2 : 0,
+            //         child: Icon(
+            //           Icons.keyboard_arrow_right,
+            //           textDirection: TextDirection.ltr,
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
             AppListTitle(
               title: Translate.of(context).translate('theme'),
               onPressed: () {

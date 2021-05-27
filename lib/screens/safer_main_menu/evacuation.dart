@@ -18,6 +18,27 @@ class Evacuation extends StatefulWidget {
 class _EvacuationState extends State<Evacuation> {
   String location = UtilPreferences.getString(Preferences.location);
 
+  Map<String, String> emergencyService = {
+    "Bridgeport": "https://www.bridgeportct.gov/emergencymgmt",
+    "Milford": "https://www.ci.milford.ct.us/emergency-management-services",
+    "New Haven":
+        "https://www.newhavenct.gov/gov/depts/emergency_info/default.htm",
+    "New London": "http://newlondonct.org/content/8251/13617/default.aspx",
+    "Norwalk": "https://www.norwalkct.org/324/Emergency-Management",
+  };
+
+  Map<String, String> evacuationRoutes = {
+    "Bridgeport":
+        "https://www.redcross.org/get-help/disaster-relief-and-recovery-services/find-an-open-shelter.html",
+    "Milford":
+        "https://www.redcross.org/get-help/disaster-relief-and-recovery-services/find-an-open-shelter.html",
+    "New Haven":
+        "https://www.redcross.org/get-help/disaster-relief-and-recovery-services/find-an-open-shelter.html",
+    "New London":
+        "https://www.redcross.org/get-help/disaster-relief-and-recovery-services/find-an-open-shelter.html",
+    "Norwalk": "https://www.norwalkct.org/FAQ.aspx?QID=226",
+  };
+
   @override
   void initState() {
     super.initState();
@@ -59,7 +80,9 @@ class _EvacuationState extends State<Evacuation> {
                         text: '\n  - Load emergency supplies in a car',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            launch('https://www.linkedin.com/');
+                            Navigator.pushNamed(context, Routes.supplies,
+                                arguments: Translate.of(context)
+                                    .translate('Supplies'));
                           },
                       ),
                       TextSpan(
@@ -107,7 +130,7 @@ class _EvacuationState extends State<Evacuation> {
                         text: 'City of $location',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            launch('https://www.linkedin.com/');
+                            launch(emergencyService[location]);
                           },
                       ),
                       TextSpan(
@@ -119,7 +142,7 @@ class _EvacuationState extends State<Evacuation> {
                         text: 'City of $location',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            launch('https://www.linkedin.com/');
+                            launch(evacuationRoutes[location]);
                           },
                       ),
                       TextSpan(
@@ -128,19 +151,10 @@ class _EvacuationState extends State<Evacuation> {
                       TextSpan(
                         style: TextStyle(
                             fontSize: 15, color: Colors.blue.withOpacity(1)),
-                        text: '\n  - Google',
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            launch('https://www.linkedin.com/');
-                          },
-                      ),
-                      TextSpan(
-                        style: TextStyle(
-                            fontSize: 15, color: Colors.blue.withOpacity(1)),
                         text: '\n  - American Red Cross',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            launch('https://www.linkedin.com/');
+                            launch('http://www.redcross.org/find-help/shelter');
                           },
                       ),
                       TextSpan(
@@ -149,7 +163,7 @@ class _EvacuationState extends State<Evacuation> {
                         text: '\n  - American Red Cross, CT Chapter',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            launch('https://www.linkedin.com/');
+                            launch('http://www.redcross.org/ct/');
                           },
                       ),
                     ],
@@ -244,7 +258,9 @@ class _EvacuationState extends State<Evacuation> {
                         text: '\n- Prepare for Emergency Needs',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            launch('https://www.linkedin.com/');
+                            Navigator.pushNamed(context, Routes.supplies,
+                                arguments: Translate.of(context)
+                                    .translate('Supplies'));
                           },
                       ),
                       TextSpan(
@@ -254,7 +270,7 @@ class _EvacuationState extends State<Evacuation> {
                             '\n- Prepare for disruption of power, utility service, communication, transportation',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            launch('https://www.linkedin.com/');
+                            launch('https://www.ready.gov/power-outages');
                           },
                       ),
                       TextSpan(
@@ -263,7 +279,9 @@ class _EvacuationState extends State<Evacuation> {
                         text: '\n- Secure your property safely',
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            launch('https://www.linkedin.com/');
+                            Navigator.pushNamed(context, Routes.propertySafety,
+                                arguments: Translate.of(context)
+                                    .translate('Property Safety'));
                           },
                       ),
                       TextSpan(
