@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:listar_flutter/screens/choose_location/choose_location.dart';
 import 'package:listar_flutter/screens/safer_main_menu/storm_tracking.dart';
 import 'package:listar_flutter/screens/screen.dart';
+import 'package:listar_flutter/screens/terms_of_use/terms_of_use.dart';
 
 class Routes {
   static const String signIn = "/signIn";
@@ -39,8 +40,18 @@ class Routes {
   static const String evacuation = "/evacuation";
   static const String stayInTouch = "/stayInTouch";
 
+  static const String termsOfUse = "/termsOfUse";
+
   Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case termsOfUse:
+        final category = settings.arguments;
+        return MaterialPageRoute(
+          builder: (context) {
+            return TermsOfUse(title: category);
+          },
+        );
+
       case chooseLocation:
         final location = settings.arguments;
         return MaterialPageRoute(

@@ -4,6 +4,7 @@ export 'language_setting/language_setting.dart';
 export 'loading/loading.dart';
 export 'profile/profile.dart';
 export 'theme_setting/theme_setting.dart';
+export 'terms_of_use/terms_of_use.dart';
 
 export 'safer_main_menu/storm_tracking.dart';
 export 'safer_main_menu/personal_safety.dart';

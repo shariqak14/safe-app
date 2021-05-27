@@ -13,6 +13,14 @@ class PersonalRisk extends StatefulWidget {
 }
 
 class _PersonalRiskState extends State<PersonalRisk> {
+  List _specialNeeds = [];
+  List _priorFlooding = [];
+  List _priorDamages = [];
+  List _priorDangers = [];
+  List _priorOutage = [];
+  List _safePlace = [];
+  List _doYouHave = [];
+
   Map<String, int> _riskScore = {
     "specialNeeds": 0,
     "priorFlooding": 0,
@@ -113,39 +121,6 @@ class _PersonalRiskState extends State<PersonalRisk> {
                   padding: const EdgeInsets.all(8),
                 ),
                 ListTile(
-                  title: RichText(
-                      text: TextSpan(
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontFamily: 'Raleway'),
-                    text: 'Score the items below:',
-                  )),
-                  subtitle: RichText(
-                    text: TextSpan(
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 14,
-                          fontFamily: 'Raleway'),
-                      text:
-                          '\nScoring Range: 0 - 7\n0 = no risk, 1 = yes to risk',
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                ),
-              ],
-            ),
-          ),
-          Card(
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                ),
-                ListTile(
                     title: RichText(
                         text: TextSpan(
                   style: TextStyle(
@@ -192,26 +167,25 @@ class _PersonalRiskState extends State<PersonalRisk> {
                     spacing: 10,
                     runSpacing: 10,
                     children: _headingData["specialNeeds"].map((item) {
+                      final bool selected = _specialNeeds.contains(item);
                       return SizedBox(
                         height: 32,
                         child: FilterChip(
+                          selected: selected,
                           label: Text(item),
-                          onSelected: (bool value) {},
+                          onSelected: (value) {
+                            selected
+                                ? _specialNeeds.remove(item)
+                                : _specialNeeds.add(item);
+                            setState(() {
+                              _specialNeeds = _specialNeeds;
+                              _riskScore["specialNeeds"] = _specialNeeds.length;
+                            });
+                          },
                         ),
                       );
                     }).toList(),
                   ),
-                ),
-                Padding(
-                  child: SpinBox(
-                    min: 0,
-                    max: 1,
-                    value: _riskScore["specialNeeds"].toDouble(),
-                    validator: (text) => text.isEmpty ? 'Invalid' : null,
-                    onChanged: (value) => setState(
-                        () => _riskScore["specialNeeds"] = value.toInt()),
-                  ),
-                  padding: EdgeInsets.only(left: 30, right: 30),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8),
@@ -252,26 +226,26 @@ class _PersonalRiskState extends State<PersonalRisk> {
                     spacing: 10,
                     runSpacing: 10,
                     children: _headingData["priorFlooding"].map((item) {
+                      final bool selected = _priorFlooding.contains(item);
                       return SizedBox(
                         height: 32,
                         child: FilterChip(
+                          selected: selected,
                           label: Text(item),
-                          onSelected: (bool value) {},
+                          onSelected: (value) {
+                            selected
+                                ? _priorFlooding.remove(item)
+                                : _priorFlooding.add(item);
+                            setState(() {
+                              _priorFlooding = _priorFlooding;
+                              _riskScore["priorFlooding"] =
+                                  _priorFlooding.length;
+                            });
+                          },
                         ),
                       );
                     }).toList(),
                   ),
-                ),
-                Padding(
-                  child: SpinBox(
-                    min: 0,
-                    max: 1,
-                    value: _riskScore["priorFlooding"].toDouble(),
-                    validator: (text) => text.isEmpty ? 'Invalid' : null,
-                    onChanged: (value) => setState(
-                        () => _riskScore["priorFlooding"] = value.toInt()),
-                  ),
-                  padding: EdgeInsets.only(left: 30, right: 30),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8),
@@ -312,26 +286,25 @@ class _PersonalRiskState extends State<PersonalRisk> {
                     spacing: 10,
                     runSpacing: 10,
                     children: _headingData["priorDamages"].map((item) {
+                      final bool selected = _priorDamages.contains(item);
                       return SizedBox(
                         height: 32,
                         child: FilterChip(
+                          selected: selected,
                           label: Text(item),
-                          onSelected: (bool value) {},
+                          onSelected: (value) {
+                            selected
+                                ? _priorDamages.remove(item)
+                                : _priorDamages.add(item);
+                            setState(() {
+                              _priorDamages = _priorDamages;
+                              _riskScore["priorDamages"] = _priorDamages.length;
+                            });
+                          },
                         ),
                       );
                     }).toList(),
                   ),
-                ),
-                Padding(
-                  child: SpinBox(
-                    min: 0,
-                    max: 1,
-                    value: _riskScore["priorDamages"].toDouble(),
-                    validator: (text) => text.isEmpty ? 'Invalid' : null,
-                    onChanged: (value) => setState(
-                        () => _riskScore["priorDamages"] = value.toInt()),
-                  ),
-                  padding: EdgeInsets.only(left: 30, right: 30),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8),
@@ -372,26 +345,25 @@ class _PersonalRiskState extends State<PersonalRisk> {
                     spacing: 10,
                     runSpacing: 10,
                     children: _headingData["priorDangers"].map((item) {
+                      final bool selected = _priorDangers.contains(item);
                       return SizedBox(
                         height: 32,
                         child: FilterChip(
+                          selected: selected,
                           label: Text(item),
-                          onSelected: (bool value) {},
+                          onSelected: (value) {
+                            selected
+                                ? _priorDangers.remove(item)
+                                : _priorDangers.add(item);
+                            setState(() {
+                              _priorDangers = _priorDangers;
+                              _riskScore["priorDangers"] = _priorDangers.length;
+                            });
+                          },
                         ),
                       );
                     }).toList(),
                   ),
-                ),
-                Padding(
-                  child: SpinBox(
-                    min: 0,
-                    max: 1,
-                    value: _riskScore["priorDangers"].toDouble(),
-                    validator: (text) => text.isEmpty ? 'Invalid' : null,
-                    onChanged: (value) => setState(
-                        () => _riskScore["priorDangers"] = value.toInt()),
-                  ),
-                  padding: EdgeInsets.only(left: 30, right: 30),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8),
@@ -432,26 +404,25 @@ class _PersonalRiskState extends State<PersonalRisk> {
                     spacing: 10,
                     runSpacing: 10,
                     children: _headingData["priorOutage"].map((item) {
+                      final bool selected = _priorOutage.contains(item);
                       return SizedBox(
                         height: 32,
                         child: FilterChip(
+                          selected: selected,
                           label: Text(item),
-                          onSelected: (bool value) {},
+                          onSelected: (value) {
+                            selected
+                                ? _priorOutage.remove(item)
+                                : _priorOutage.add(item);
+                            setState(() {
+                              _priorOutage = _priorOutage;
+                              _riskScore["priorOutage"] = _priorOutage.length;
+                            });
+                          },
                         ),
                       );
                     }).toList(),
                   ),
-                ),
-                Padding(
-                  child: SpinBox(
-                    min: 0,
-                    max: 1,
-                    value: _riskScore["priorOutage"].toDouble(),
-                    validator: (text) => text.isEmpty ? 'Invalid' : null,
-                    onChanged: (value) => setState(
-                        () => _riskScore["priorOutage"] = value.toInt()),
-                  ),
-                  padding: EdgeInsets.only(left: 30, right: 30),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8),
@@ -492,26 +463,25 @@ class _PersonalRiskState extends State<PersonalRisk> {
                     spacing: 10,
                     runSpacing: 10,
                     children: _headingData["safePlace"].map((item) {
+                      final bool selected = _safePlace.contains(item);
                       return SizedBox(
                         height: 32,
                         child: FilterChip(
+                          selected: selected,
                           label: Text(item),
-                          onSelected: (bool value) {},
+                          onSelected: (value) {
+                            selected
+                                ? _safePlace.remove(item)
+                                : _safePlace.add(item);
+                            setState(() {
+                              _safePlace = _safePlace;
+                              _riskScore["safePlace"] = _safePlace.length;
+                            });
+                          },
                         ),
                       );
                     }).toList(),
                   ),
-                ),
-                Padding(
-                  child: SpinBox(
-                    min: 0,
-                    max: 1,
-                    value: _riskScore["safePlace"].toDouble(),
-                    validator: (text) => text.isEmpty ? 'Invalid' : null,
-                    onChanged: (value) =>
-                        setState(() => _riskScore["safePlace"] = value.toInt()),
-                  ),
-                  padding: EdgeInsets.only(left: 30, right: 30),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8),
@@ -552,26 +522,25 @@ class _PersonalRiskState extends State<PersonalRisk> {
                     spacing: 10,
                     runSpacing: 10,
                     children: _headingData["doYouHave"].map((item) {
+                      final bool selected = _doYouHave.contains(item);
                       return SizedBox(
                         height: 32,
                         child: FilterChip(
+                          selected: selected,
                           label: Text(item),
-                          onSelected: (bool value) {},
+                          onSelected: (value) {
+                            selected
+                                ? _doYouHave.remove(item)
+                                : _doYouHave.add(item);
+                            setState(() {
+                              _doYouHave = _doYouHave;
+                              _riskScore["doYouHave"] = _doYouHave.length;
+                            });
+                          },
                         ),
                       );
                     }).toList(),
                   ),
-                ),
-                Padding(
-                  child: SpinBox(
-                    min: 0,
-                    max: 1,
-                    value: _riskScore["doYouHave"].toDouble(),
-                    validator: (text) => text.isEmpty ? 'Invalid' : null,
-                    onChanged: (value) =>
-                        setState(() => _riskScore["doYouHave"] = value.toInt()),
-                  ),
-                  padding: EdgeInsets.only(left: 30, right: 30),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8),

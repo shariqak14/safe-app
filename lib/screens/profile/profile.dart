@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:listar_flutter/blocs/bloc.dart';
 import 'package:listar_flutter/configs/config.dart';
 import 'package:listar_flutter/utils/utils.dart';
 import 'package:listar_flutter/widgets/widget.dart';
@@ -15,102 +13,14 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  DarkOption _darkOption = AppTheme.darkThemeOption;
-  ThemeBloc _themeBloc;
-
   @override
   void initState() {
-    _themeBloc = BlocProvider.of<ThemeBloc>(context);
     super.initState();
-  }
-
-  ///On Change Dark Option
-  void _onChangeDarkOption() {
-    _themeBloc.add(ChangeTheme(darkOption: _darkOption));
   }
 
   ///On navigation
   void _onNavigate(String route) {
     Navigator.pushNamed(context, route);
-  }
-
-  Future<void> _showDarkModeSetting() async {
-    setState(() {
-      _darkOption = AppTheme.darkThemeOption;
-    });
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: true, // user must tap button!
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(Translate.of(context).translate('dark_mode')),
-          content: StatefulBuilder(
-            builder: (context, setState) {
-              return SingleChildScrollView(
-                child: Column(
-                  children: <Widget>[
-                    CheckboxListTile(
-                      title: Text(
-                        Translate.of(context).translate(
-                          UtilTheme.exportLangTheme(DarkOption.dynamic),
-                        ),
-                      ),
-                      value: _darkOption == DarkOption.dynamic,
-                      onChanged: (bool value) {
-                        setState(() {
-                          _darkOption = DarkOption.dynamic;
-                        });
-                      },
-                    ),
-                    CheckboxListTile(
-                      title: Text(
-                        Translate.of(context).translate(
-                          UtilTheme.exportLangTheme(DarkOption.alwaysOn),
-                        ),
-                      ),
-                      value: _darkOption == DarkOption.alwaysOn,
-                      onChanged: (bool value) {
-                        setState(() {
-                          _darkOption = DarkOption.alwaysOn;
-                        });
-                      },
-                    ),
-                    CheckboxListTile(
-                      title: Text(
-                        Translate.of(context).translate(
-                          UtilTheme.exportLangTheme(DarkOption.alwaysOff),
-                        ),
-                      ),
-                      value: _darkOption == DarkOption.alwaysOff,
-                      onChanged: (bool value) {
-                        setState(() {
-                          _darkOption = DarkOption.alwaysOff;
-                        });
-                      },
-                    ),
-                  ],
-                ),
-              );
-            },
-          ),
-          actions: <Widget>[
-            FlatButton(
-              child: Text(Translate.of(context).translate('close')),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            RaisedButton(
-              child: Text(Translate.of(context).translate('apply')),
-              onPressed: () {
-                _onChangeDarkOption();
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
   }
 
   @override
@@ -168,8 +78,24 @@ class _ProfileState extends State<Profile> {
             AppListTitle(
               title: Translate.of(context).translate('terms_of_use'),
               onPressed: () {
-                _onNavigate(Routes.changeLanguage);
+                Navigator.pushNamed(context, Routes.termsOfUse,
+                    arguments: Translate.of(context).translate('terms_of_use'));
               },
+              trailing: Row(
+                children: <Widget>[
+                  RotatedBox(
+                    quarterTurns: UtilLanguage.isRTL() ? 2 : 0,
+                    child: Icon(
+                      Icons.keyboard_arrow_right,
+                      textDirection: TextDirection.ltr,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            AppListTitle(
+              title: Translate.of(context).translate('version'),
+              onPressed: () {},
               trailing: Row(
                 children: <Widget>[
                   Text(

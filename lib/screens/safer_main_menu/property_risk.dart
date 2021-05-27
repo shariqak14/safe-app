@@ -28,6 +28,8 @@ class _PropertyRiskState extends State<PropertyRisk> {
     "treeFalling": 0,
   };
 
+  String _dropDownValue;
+
   @override
   void initState() {
     super.initState();
@@ -87,11 +89,31 @@ class _PropertyRiskState extends State<PropertyRisk> {
                   leading: CircleAvatar(
                       backgroundImage: AssetImage('assets/images/house.png')),
                   title: Container(
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          labelText: 'Home Type', suffixText: 'years'),
-                    ),
-                  ),
+                      child: DropdownButton(
+                    hint: _dropDownValue == null
+                        ? Text('Dropdown')
+                        : Text(
+                            _dropDownValue,
+                            style: TextStyle(color: Colors.blue),
+                          ),
+                    isExpanded: true,
+                    iconSize: 30.0,
+                    items: ['One', 'Two'].map(
+                      (val) {
+                        return DropdownMenuItem<String>(
+                          value: val,
+                          child: Text(val),
+                        );
+                      },
+                    ).toList(),
+                    onChanged: (val) {
+                      setState(
+                        () {
+                          _dropDownValue = val;
+                        },
+                      );
+                    },
+                  )),
                   subtitle: Container(
                     child: TextFormField(
                       decoration: InputDecoration(
