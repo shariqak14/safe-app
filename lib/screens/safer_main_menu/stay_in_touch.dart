@@ -52,6 +52,45 @@ class _StayInTouchState extends State<StayInTouch> {
                   padding: const EdgeInsets.all(8),
                 ),
                 ListTile(
+                    leading: CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/images/social_media.png')),
+                    title: const Text('Social Media'),
+                    subtitle: RichText(
+                      text: TextSpan(
+                        style: TextStyle(
+                            color: Colors.blue.withOpacity(1),
+                            fontFamily: 'Raleway'),
+                        text: 'Facebook',
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            launch('https://www.facebook.com');
+                          },
+                        children: [
+                          TextSpan(
+                            text: '\nTwitter',
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                launch('https://www.twitter.com');
+                              },
+                          )
+                        ],
+                      ),
+                    )),
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                ),
+              ],
+            ),
+          ),
+          Card(
+            clipBehavior: Clip.antiAlias,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                ),
+                ListTile(
                   leading: CircleAvatar(
                       backgroundImage: AssetImage('assets/images/police.png')),
                   title: const Text('Police, Fire, and Medical Emergency:'),
